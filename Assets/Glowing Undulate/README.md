@@ -7,3 +7,4 @@ When I made the emissive objects static, it had this odd effect where the vertex
 	- this was fixed by adding the tag "DisableBatching" = "True" to the shader
 	- https://answers.unity.com/questions/1325005/why-does-my-vertex-animation-shader-produce-differ.html
 	- gotta look into those later
+	- also, gotta get the emissive light casting working; it doesn't look like it's affecting the floor
