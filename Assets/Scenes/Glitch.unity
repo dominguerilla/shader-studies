@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxTimeBetweenGlitches: 3
-  glitchDuration: 0.5
+  glitchDuration: 0.25
 --- !u!136 &816502952
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxTimeBetweenGlitches: 3
-  glitchDuration: 0.5
+  glitchDuration: 0.25
 --- !u!135 &1163527261
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -761,7 +761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxTimeBetweenGlitches: 3
-  glitchDuration: 0.5
+  glitchDuration: 0.25
 --- !u!65 &1436860344
 BoxCollider:
   m_ObjectHideFlags: 0
