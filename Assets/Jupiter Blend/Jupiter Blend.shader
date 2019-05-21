@@ -54,12 +54,20 @@ Shader "Unlit/Jupiter Blend"
 				
 				float _Mystery = 0.3f;
 				float2 p = i.uv * _Scale;
+
+				// This part adds octaves of values to the pixel value.
+				// Reducing the loop count results in a 'lower resolution' output
+				// Increasing the loop count increases the 'resolution'
+				// In the original shader, _Mystery is set to 0.3...what is this called?
+				// Playing around with _Mystery's value has interesting results.
 				for (int i = 1; i < 10; i++) {
 					p.x += _Mystery / float(i) * sin(float(i) * 3. * p.y + _Time.x * _Speed);
 					p.y += _Mystery / float(i) * cos(float(i) * 3. * p.x + _Time.x * _Speed);
 				}
 				
-				//float r = 1. * .5 + .5;
+				// I think the multiplication and addition of the .5 is to clamp the values between 0 and 1;
+				// I'm not sure what the purpose of the addition of 1. in the R and G calculation is for though...
+				// I reached out to the author for clarification. In the meantime, I can experiment with these values.
 				float r = cos(p.x + p.y + 1.) * .5 + .5;
 				float g = sin(p.x + p.y + 1.) * .5 + .5;
 				float b = (sin(p.x + p.y) + cos(p.x + p.y)) * .5 + .5;
