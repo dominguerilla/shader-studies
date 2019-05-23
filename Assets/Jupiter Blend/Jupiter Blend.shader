@@ -6,7 +6,9 @@ Shader "Unlit/Jupiter Blend"
         _MainTex ("Texture", 2D) = "white" {}
 		_Speed ("Speed", float) = 1.0
 		_Scale ("Scale", float) = 0.002
-
+		// I have no idea how to describe this variable, so I chose the closest word I could think of.
+		_Blendiness ("Blendiness", float) = 0.5
+		_Mystery ("Mystery", float) = 3.0
     }
     SubShader
     {
@@ -36,7 +38,7 @@ Shader "Unlit/Jupiter Blend"
             sampler2D _MainTex;
             float4 _MainTex_ST;
 
-			float _Speed, _Scale;
+			float _Speed, _Scale, _Blendiness, _Mystery;
 
             v2f vert (appdata v)
             {
@@ -52,17 +54,16 @@ Shader "Unlit/Jupiter Blend"
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
 				
-				float _Mystery = 0.3f;
 				float2 p = i.uv * _Scale;
 
 				// This part adds octaves of values to the pixel value.
 				// Reducing the loop count results in a 'lower resolution' output
 				// Increasing the loop count increases the 'resolution'
-				// In the original shader, _Mystery is set to 0.3...what is this called?
-				// Playing around with _Mystery's value has interesting results.
+				// In the original shader, _Blendiness is set to 0.3...what is this called?
+				// Playing around with _Blendiness's value has interesting results.
 				for (int i = 1; i < 10; i++) {
-					p.x += _Mystery / float(i) * sin(float(i) * 3. * p.y + _Time.x * _Speed);
-					p.y += _Mystery / float(i) * cos(float(i) * 3. * p.x + _Time.x * _Speed);
+					p.x += _Blendiness / float(i) * sin(float(i) * _Mystery * p.y + _Time.x * _Speed);
+					p.y += _Blendiness / float(i) * cos(float(i) * _Mystery * p.x + _Time.x * _Speed);
 				}
 				
 				// I think the multiplication and addition of the .5 is to clamp the values between 0 and 1;
