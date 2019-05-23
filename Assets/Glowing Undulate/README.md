@@ -2,7 +2,7 @@
 
 Glows and undulates.
 
-![screenshot]("https://github.com/dominguerilla/shader-studies/blob/master/Assets/Glowing%20Undulate/glowing_undulate_001.gif")
+![screenshot](https://github.com/dominguerilla/shader-studies/blob/master/Assets/Glowing%20Undulate/glowing_undulate_001.gif)
 
 For emissive materials to cast light on objects, the emissive object has to be static.
 When I made the emissive objects static, it had this odd effect where the vertexes undulated as expected in the editor, but in Play mode they would undulate back and forth away from a certain point...
