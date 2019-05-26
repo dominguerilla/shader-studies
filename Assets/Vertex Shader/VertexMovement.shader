@@ -23,7 +23,7 @@ Shader "Custom/VertexMovement" {
 
 
 	void vert(inout appdata_full v, out Input o) {
-		float multiplyValue = abs(sin(_Time * 30 + v.vertex.y)); //how much we want to multiply our vertex
+		float multiplyValue = abs(sin(_Time * 30 + v.vertex.y)) * 1.1; //how much we want to multiply our vertex
 		//v.vertex.x *= multiplyValue * v.normal.x;
 		v.vertex.z *= multiplyValue; //* v.normal.y;
 		UNITY_INITIALIZE_OUTPUT(Input, o);

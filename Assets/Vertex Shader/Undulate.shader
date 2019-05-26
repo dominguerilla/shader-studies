@@ -34,7 +34,8 @@
 
 		fixed4 c = _Color1;
 		o.Albedo = (c.rgb + _Color2.rgb) * (IN.undulateFactor);
-		o.Alpha = 1;
+		o.Emission = _Color2.rgb * 0.1;
+		o.Alpha = c.rgb;
 	}
 	ENDCG
 	}
