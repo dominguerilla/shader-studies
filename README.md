@@ -6,6 +6,6 @@ This is a collection of notes and studies I'm using to learn shaders. In many of
 
 1. [Fresnel](Assets/Fresnel/README.md)
 2. [Glitch](Assets/Glitch/README.md)
-3. [Glowing Undulation](Assets/Glowing Undulate/README.md)
+3. [Glowing Undulation]("Assets/Glowing Undulate/README.md")
 
 There are more shaders than this list includes; I will update it once I finish documenting and cleaning them up.
