@@ -2,8 +2,8 @@
 
 Displaces the vertices of a mesh in a 'glitch'-like manner given a sample texture.
 
-(Before)[Assets/Glitch/Before.png]
-(After)[Assets/Glitch/After.png]
+![Before](Assets/Glitch/Before.png)
+![After](Assets/Glitch/After.png)
 
 ## Shaders
 
